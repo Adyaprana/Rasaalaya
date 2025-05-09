@@ -1,0 +1,36 @@
+/* editor-style.css */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Arimo:400,700');
+
+body {
+    background-color: #FFF;
+    padding: 10px;
+    margin: 10px auto;
+    font-family: Arimo, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+h1 { font-size: 24px; }
+h2 { font-size: 22px; }
+h3 { font-size: 20px; }
+h4 { font-size: 18px; }
+h5 { font-size: 16px; }
+h6 { font-size: 14px; }
+
+p { margin: 4px 0 10px; }
+
+blockquote {
+    background-color: #EDEDED;
+    border-left: 6px solid #687888;
+    margin: 20px;
+    padding: 10px 14px;
+    font-style: italic;
+}
+
+blockquote cite {
+    display: block;
+    margin-top: 8px;
+    text-align: right;
+    font-style: normal;
+    font-size: small;
+}

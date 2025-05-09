@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Forum - Rasaalaya{% endblock %}
+
+{% block content %}
+<div class="restaurant-container forum-container">
+  <h2 class="restaurant-name">Community Forum</h2>
+  <p class="restaurant-description">Discuss food, reviews, and more with other users.</p>
+
+  <div class="post-list">
+    {% for post in posts %}
+    <div class="post-card">
+      <div class="post-header">
+        <h3 class="post-title">{{ post.title }}</h3>
+        <span class="post-author">by {{ post.author }}</span>
+      </div>
+      <p class="post-body">{{ post.body }}</p>
+      <div class="post-footer">
+        <span class="post-date">{{ post.date_posted }}</span>
+        <p>Debug ID: {{ post.id }}</p>
+        <a class="explore-btn" href="{{ url_for('view_post', post_id=post.id) }}">Read More</a>
+    </div>
+    </div>
+    {% else %}
+    <p>No posts yet. Be the first to <a href="{{ url_for('new_post') }}">create one</a> </p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+
+

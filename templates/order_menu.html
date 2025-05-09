@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Available Menus - Order Now{% endblock %}
+
+{% block content %}
+<div class="order-page">
+  <h2>🧾 Available Food Items for Order</h2>
+
+  <div class="food-list">
+    {% for item in menu_items %}
+    <div class="food-card">
+      <div class="food-image">
+        <img src="{{ item.image }}" alt="{{ item.name }}">
+      </div>
+      <div class="food-info">
+        <h3 class="food-name">{{ item.name }}</h3>
+        <p class="restaurant-name">From: {{ item.restaurant_name }}</p>
+        <p class="food-desc">{{ item.description }}</p>
+        <p class="food-price">Price: ₹{{ item.price }}</p>
+
+        <form action="{{ url_for('order') }}" method="GET">
+          <input type="hidden" name="food" value="{{ item.name }}">
+          <input type="hidden" name="restaurant" value="{{ item.restaurant_name }}">
+          <input type="hidden" name="price" value="{{ item.price }}">
+          <button class="reserve-btn" type="submit">Order Now</button>
+        </form>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+
+

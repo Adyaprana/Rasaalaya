@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Foods - Rasaalaya{% endblock %}
+
+{% block content %}
+<div class="search-container">
+    <form action="{{ url_for('index') }}" method="get">
+        <input type="text" name="q" placeholder="Search foods by name..." value="{{ query }}">
+        <!-- Keep the toggle visible so users can change their selection -->
+        <div class="food-type-toggle">
+            <label class="veg-option">
+                <input type="radio" name="food_type" value="veg" {% if request.args.get('food_type') == 'veg' %}checked{% endif %}>
+                <i class="fas fa-leaf"></i> Veg
+            </label>
+            <label class="nonveg-option">
+                <input type="radio" name="food_type" value="nonveg" {% if request.args.get('food_type') == 'nonveg' %}checked{% endif %}>
+                <i class="fas fa-drumstick-bite"></i> Non Veg
+            </label>
+        </div>
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<div class="food-list">
+    {% if food_items|length == 0 %}
+        <p>No food items found.</p>
+    {% endif %}
+    {% for food in food_items %}
+    <div class="food-card">
+        <div class="food-image">
+            <img src="{{ food.image }}" alt="{{ food.name }}">
+        </div>
+        <div class="food-info">
+            <h3 class="food-name">{{ food.name }}</h3>
+            <p class="restaurant-name">From: {{ food.restaurant_name }}</p>
+            <p class="food-desc">{{ food.description }}</p>
+            <p class="food-price">Price: ₹{{ food.price }}</p>
+            <p class="food-rating">
+                Rating:
+                <span class="stars">
+                    &#9733; &#9733; &#9733; &#9733; &#9734;
+                </span>
+            </p>
+            {% set reserve_url = url_for("reserve") %}
+            <button class="reserve-btn" onclick="location.href='{{ reserve_url }}'">
+                Reserve & Book
+            </button>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

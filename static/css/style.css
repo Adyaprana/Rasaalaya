@@ -1,0 +1,1488 @@
+/* style.css */
+/* Base reset */
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Roboto', sans-serif; /* Premium font */
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Section */
+header {
+    background-color: #222; /* Dark background for premium look */
+    color: white;
+    padding: 20px 40px; /* Larger padding for spacious feel */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for elegance */
+}
+
+/* Container for Header */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo Styling */
+header h1 {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    color: #DC143C;
+    font-weight: 700; /* Strong, bold text for a premium look */
+    letter-spacing: 1px;
+}
+
+/* Logo size */
+header .logo {
+    width: 50px;
+    margin-right: 15px; /* Slightly bigger gap for logo */
+}
+
+/* Navigation Links */
+nav {
+    display: flex;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500; /* Semi-bold for better readability */
+    font-size: 18px;
+    text-transform: uppercase; /* Adds sophistication */
+    position: relative;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover Effect */
+nav ul li a:hover {
+    color: #DC143C;
+    padding-bottom: 5px; /* Underline effect */
+    border-bottom: 2px solid #DC143C; /* More premium hover interaction */
+}
+
+/* Mobile Menu Toggle */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.nav-toggle-label:hover {
+    color: #DC143C; /* Subtle hover effect on hamburger icon */
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Mobile Hamburger Menu */
+    .nav-toggle-label {
+        display: block;
+        margin-top: 10px;
+    }
+
+    /* Hide navigation links by default */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #222;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 999;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* When the checkbox is checked, show the navigation links */
+    .nav-toggle:checked + .nav-toggle-label + nav ul {
+        display: flex;
+    }
+
+    /* Navigation links styling for mobile */
+    nav ul li {
+        text-align: center;
+        width: 100%;
+        padding: 20px;
+
+        background-color: #222;
+        border-bottom: 1px solid #444;
+    }
+
+    nav ul li a {
+        font-size: 18px; /* Slightly smaller font for mobile */
+        color: white;
+        font-weight: 600;
+    }
+
+    nav ul li a:hover {
+        color: #DC143C;
+        padding-bottom: 5px;
+        border-bottom: 2px solid #DC143C;
+    }
+
+    /* Close menu when clicking outside */
+    .nav-toggle:checked + .nav-toggle-label + nav ul {
+        display: block;
+    }
+}
+
+/* Very Small Mobile (below 375px) */
+@media (max-width: 375px) {
+    header h1 {
+        font-size: 24px; /* Smaller font size for logo */
+    }
+
+    nav ul li {
+        padding: 15px; /* Smaller padding on very small screens */
+    }
+
+    nav ul li a {
+        font-size: 16px; /* Smaller font size for very small screens */
+    }
+
+    nav ul li a:hover {
+        padding-bottom: 3px;
+        font-size: 15px; /* Slightly reduced hover font size */
+    }
+}
+
+
+/* Default (light mode) */
+body {
+  background-color: #f9f9f9;
+  color: #222;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode Toggle UI */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 2px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.switch input { display: none; }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
+  border-radius: 26px;
+  transition: 0.4s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #DC143C;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* Dark theme */
+body.dark-mode {
+  background-color: #1c1c1c;
+  color: #f0f0f0;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: #111;
+  color: #f0f0f0;
+}
+
+body.dark-mode nav a {
+  color: #c9c2c2;
+}
+
+
+/* Default style */
+.food-name {
+    color: #222; /* Dark text for light background */
+}
+
+/* In dark mode, override */
+body.dark-mode .food-name {
+    color: #f4eeee; /* Light text for dark background */
+}
+
+
+
+/* Ensure food name and price are visible in light mode */
+.food-name,
+.food-price, 
+.food-rating{
+  color: #0f0e0e;
+}
+
+/* Override for dark mode */
+body.dark-mode .food-name,
+body.dark-mode .food-price {
+  color: #554949 !important;
+  text-shadow: 0 3px 5px rgba(6, 6, 6, 0.5);
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+
+
+
+
+/* Footer Styling */
+footer {
+    background-color: #222; /* Dark background for consistency with header */
+    color: #bbb; /* Lighter text color for subtle contrast */
+    padding: 20px 40px; /* More space for the footer */
+    text-align: center;
+    font-size: 14px; /* Smaller text size for footer */
+    letter-spacing: 0.5px; /* Slight letter-spacing for better readability */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+}
+
+/* Footer Text Styling */
+footer p {
+    margin-bottom: 10px;
+}
+
+/* Links in Footer */
+footer a {
+    color: #DC143C; /* Accent color */
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover Effect for Footer Links */
+footer a:hover {
+    color: white;
+    border-bottom: 2px solid #DC143C;
+    padding-bottom: 2px; /* Subtle underline on hover */
+}
+
+/* Mobile Footer Styling */
+@media (max-width: 768px) {
+    footer {
+        padding: 15px 20px; /* Adjust padding for smaller screens */
+    }
+
+    footer p {
+        font-size: 12px; /* Smaller text on mobile */
+    }
+
+    footer a {
+        font-size: 13px; /* Slightly smaller links for mobile */
+    }
+}
+
+
+
+
+
+/* Food Menu Page Specific Styling */
+/* Food Menu */
+.food-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.food-item {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 15px;
+    width: 250px;
+    text-align: center;
+}
+
+.food-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.food-item h4 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.food-item p {
+    font-size: 14px;
+    color: #555;
+}
+
+.food-item strong {
+    color: #DC143C;
+    font-size: 16px;
+}
+
+/* Container for the entire restaurant section */
+.restaurant-container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 10px;
+}
+/* Restaurant header styling */
+/* Make restaurant name smaller and more centered */
+.restaurant-name {
+    font-size: 20px !important;  /* Ensure the font size is applied */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+.restaurant-description {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #555;
+}
+/* ========== Container ========== */
+/* ----------------- Default (Mobile/Tablet: Grid) ----------------- */
+.food-items-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  padding: 20px 0;
+}
+
+.food-item-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.food-item-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== Dark Mode for Cards ========== */
+body.dark-mode .food-item-card {
+  background-color: #1e1e1e;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+body.dark-mode .food-item-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* ----------------- Desktop (Fixed-size Flex) ----------------- */
+@media (min-width: 1024px) {
+  .food-items-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 0;
+  }
+
+  .food-item-card {
+    flex-direction: row;
+    height: auto; /* allow height to grow with content */
+  }
+
+  .food-image {
+    flex: 0 0 200px;
+  }
+
+  .food-image img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .food-details {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  /* Keep your premium hover styles */
+  .food-item-card:hover .food-image img {
+    transform: scale(1.05);
+  }
+}
+
+/* ----------------- Shared Details & Button ----------------- */
+.food-name {
+  font-size: 20px;
+  margin: 0 0 8px;
+  color: #222;
+}
+.food-desc {
+  flex: 1;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+}
+.food-price {
+  font-size: 16px;
+  font-weight: 600;
+  color: #DC143C;
+  margin-bottom: 8px;
+}
+.food-rating .stars {
+  color: #f5a623;
+  margin-left: 4px;
+}
+.food-rating {
+  color: #857d74;
+  margin-left: 4px;
+  text-shadow: 0 3px 5px rgba(7, 7, 7, 0.5);
+
+}
+.reserve-btn {
+  margin-top: auto;
+  padding: 10px 0;
+  background-color: #DC143C;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.reserve-btn:hover {
+  background-color: #b01030;
+}
+
+/* ========== Dark Mode Text Overrides ========== */
+body.dark-mode .food-name,
+body.dark-mode .food-price {
+  color: #767474 !important;
+    text-shadow: 0 3px 5px rgba(6, 6, 6, 0.5);
+
+}
+body.dark-mode .food-desc {
+  color: #ccc;
+}
+body.dark-mode .reserve-btn {
+  background-color: #DC143C;
+}
+body.dark-mode .reserve-btn:hover {
+  background-color: #b01030;
+}
+
+
+
+
+/* Container for all restaurants */
+.restaurant-list {
+    width: 90%;
+    margin: 20px auto;
+}
+
+/* Each restaurant container */
+.restaurant-container {
+    margin-bottom: 40px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+
+/* Restaurant header */
+.restaurant-name {
+    /* font-size: 28px; */
+    text-align: center;
+    margin-bottom: 10px;
+}
+.restaurant-description {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Container for food items */
+.food-items-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Food item card */
+.food-item-card {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Fixed image container */
+.food-image {
+    flex: 0 0 200px;
+}
+.food-image img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Food details */
+.food-details {
+    flex: 1;
+    padding: 15px;
+}
+.food-name {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+.food-desc {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #666;
+}
+.food-price {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.food-rating {
+    margin-bottom: 10px;
+}
+.stars {
+    color: #FFA500;  /* Orange */
+    font-size: 18px;
+}
+
+/* Reserve button */
+.reserve-btn {
+    padding: 8px 15px;
+    background-color: #DC143C;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.reserve-btn:hover {
+    background-color: #b01037;
+}
+
+/* Container for the list of restaurants */
+.restaurant-list {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Each restaurant card */
+.restaurant-card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+/* Restaurant image container */
+.restaurant-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Restaurant information */
+.restaurant-info {
+    padding: 15px;
+    text-align: center;
+}
+.restaurant-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+.cuisine {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #555;
+}
+.rating {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #FFA500; /* Orange for stars */
+}
+.stars {
+    margin-right: 5px;
+}
+
+/* Explore Foods button */
+.explore-btn {
+    padding: 10px 20px;
+    background-color: #DC143C;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.explore-btn:hover {
+    background-color: #b01037;
+}
+
+
+
+
+
+/* Styling for the search container on the foods page */
+.search-container {
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+}
+.search-container form {
+    display: inline-block;
+}
+.search-container input[type="text"] {
+    padding: 8px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.search-container button {
+    padding: 8px 12px;
+    background-color: #DC143C;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+.search-container button:hover {
+    background-color: #b01037;
+}
+
+/* Container for food items */
+.food-list {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Each food card styling */
+.food-card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+.food-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.food-info {
+    padding: 15px;
+    text-align: center;
+}
+.food-name {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.restaurant-name {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 10px;
+}
+.food-desc {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #555;
+}
+.food-price {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.food-rating {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.stars {
+    color: #FFA500;
+}
+.reserve-btn {
+    padding: 8px 15px;
+    background-color: #DC143C;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.reserve-btn:hover {
+    background-color: #b01037;
+}
+/* Search container */
+.search-container {
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+}
+.search-container form {
+    display: inline-block;
+}
+.search-container input[type="text"] {
+    padding: 8px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.search-container button {
+    padding: 8px 12px;
+    background-color: #DC143C;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+.search-container button:hover {
+    background-color: #b01037;
+}
+
+/* Search Container and Toggle */
+.search-container {
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+}
+.search-container form {
+    display: inline-block;
+}
+.search-container input[type="text"] {
+    padding: 8px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.search-container button {
+    padding: 8px 12px;
+    background-color: #DC143C;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+.search-container button:hover {
+    background-color: #b01037;
+}
+.food-type-toggle {
+    display: inline-block;
+    margin-left: 10px;
+}
+.food-type-toggle label {
+    margin-right: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.food-type-toggle input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Veg Theme Overrides */
+.veg-theme header {
+    background-color: green;
+}
+.veg-theme {
+    background-color: #e0f2e9;
+}
+
+/* Other styles remain as before... */
+
+
+
+
+
+/* Options Page – Light Mode Defaults */
+.restaurant-card {
+  background-color: #fff;
+  color: #222;
+}
+.restaurant-card .restaurant-name,
+.restaurant-card .cuisine,
+.restaurant-card label,
+.restaurant-card p {
+  color: inherit;
+}
+.restaurant-card input[type="text"],
+.restaurant-card select {
+  background-color: #fafafa;
+  color: #222;
+  border: 1px solid #ccc;
+}
+.restaurant-card .reserve-btn {
+  background-color: #DC143C;
+  color: #fff;
+}
+
+/* Options Page – Dark Mode Overrides */
+body.dark-mode .restaurant-card {
+  background-color: #1e1e1e !important;
+  color: #f0f0f0 !important;
+}
+body.dark-mode .restaurant-card .restaurant-name,
+body.dark-mode .restaurant-card .cuisine,
+body.dark-mode .restaurant-card label,
+body.dark-mode .restaurant-card p {
+  color: #f0f0f0 !important;
+}
+body.dark-mode .restaurant-card input[type="text"],
+body.dark-mode .restaurant-card select {
+  background-color: #2c2c2c !important;
+  color: #f0f0f0 !important;
+  border: 1px solid #444 !important;
+}
+body.dark-mode .restaurant-card .reserve-btn {
+  background-color: #b01030 !important;
+  color: #fff !important;
+}
+
+
+
+
+
+/* Forum Page Specific Styling */
+.forum-container {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 24px;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+}
+
+.restaurant-name {
+    font-size: 36px;
+    font-weight: 600;
+    color: #D62828;
+    margin-bottom: 10px;
+}
+
+.restaurant-description {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Post Grid */
+.post-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Post Card */
+.post-card {
+    background-color: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.post-header {
+    padding: 20px;
+    border-bottom: 1px solid #f1f1f1;
+    text-align: left;
+}
+
+.post-title {
+    font-size: 22px;
+    color: #D62828;
+    margin: 0;
+}
+
+.post-author {
+    font-size: 13px;
+    color: #888;
+    margin-top: 6px;
+}
+
+/* Post Body */
+.post-body {
+    padding: 18px 20px;
+    font-size: 15px;
+    color: #333;
+    line-height: 1.7;
+    text-align: left;
+}
+
+/* Footer with Button and Date */
+.post-footer {
+    padding: 18px 20px;
+    border-top: 1px solid #f1f1f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-date {
+    font-size: 12px;
+    color: #aaa;
+}
+
+/* Read More Button */
+.explore-btn {
+    background-color: #D62828;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.25s ease;
+}
+
+.explore-btn:hover {
+    background-color: #b71c1c;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 700px) {
+    .restaurant-name {
+        font-size: 28px;
+    }
+
+    .restaurant-description {
+        font-size: 16px;
+    }
+
+    .post-title {
+        font-size: 18px;
+    }
+
+    .post-body {
+        font-size: 14px;
+    }
+
+    .explore-btn {
+        font-size: 13px;
+        padding: 7px 14px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* View Post Page Styling */
+.post-container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9f9f9; /* Light background */
+    border-radius: 12px; /* Rounded corners for card-like effect */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center;
+}
+
+/* Post Title */
+.post-container h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #D62828; /* Red color for emphasis */
+    margin-bottom: 20px;
+}
+
+/* Author and Date */
+.post-container p {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+    margin: 8px 0;
+    font-weight: 400;
+}
+
+/* Post Body */
+.post-body {
+    background-color: #ffffff; /* White background for the body */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Light shadow for depth */
+    font-size: 18px;
+    color: #444;
+    line-height: 1.7;
+    text-align: left;
+    margin-bottom: 30px; /* Extra spacing below the post body */
+}
+
+/* Back to Forum Button */
+.back-to-forum-btn {
+    display: inline-block;
+    background-color: #D62828;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.back-to-forum-btn:hover {
+    background-color: #b71c1c;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 700px) {
+    .post-container {
+        padding: 16px;
+    }
+
+    .post-container h2 {
+        font-size: 28px;
+    }
+
+    .post-body {
+        font-size: 16px;
+    }
+
+    .back-to-forum-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Reservation page styling */
+.reservation-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.reservation-container h2 {
+    font-size: 28px;
+    color: #DC143C;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.reservation-subtext {
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.reservation-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.reservation-form label {
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #333;
+}
+
+.reservation-form input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.reserve-btn {
+    padding: 12px;
+    background-color: #DC143C;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.reserve-btn:hover {
+    background-color: #b01030;
+}
+
+.confirmation-box {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #e6ffed;
+    color: #2b6e44;
+    font-size: 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+
+
+
+
+
+/* ===== Place Order Form Styles ===== */
+#place-order-form {
+    max-width: 700px;
+    margin: 2rem auto;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  #place-order-form h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  #place-order-form label {
+    font-weight: 600;
+    display: block;
+    margin-top: 1rem;
+    color: #444;
+  }
+  
+  #place-order-form input[type="text"],
+  #place-order-form input[type="number"],
+  #place-order-form textarea {
+    width: 100%;
+    padding: 0.7rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+  }
+  
+  #place-order-form input:focus,
+  #place-order-form textarea:focus {
+    border-color: #4caf50;
+    outline: none;
+  }
+  
+  #place-order-form textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  #place-order-form button {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0.8rem;
+    background-color: #4caf50;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #place-order-form button:hover {
+    background-color: #45a049;
+  }
+
+  
+/* ===== Order menu Page Scoped Styles ===== */
+.order-page h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 1.8rem;
+  color: #DC143C;
+}
+
+/* Grid on mobile, two-col on desktop */
+.order-page .food-list {
+  display: grid;
+  gap: 24px;
+  padding: 0 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* Card base */
+.order-page .food-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.order-page .food-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+/* Image container: fixed aspect, cover fill */
+.order-page .food-image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.order-page .food-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.order-page .food-card:hover .food-image img {
+  transform: scale(1.05);
+}
+
+/* Info block */
+.order-page .food-info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.order-page .food-name {
+  font-size: 1.4rem;
+  margin: 0 0 8px;
+  color: #222;
+}
+
+.order-page .restaurant-name {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 12px;
+}
+
+.order-page .food-desc {
+  flex: 1;
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.order-page .food-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #DC143C;
+  margin-bottom: 16px;
+}
+
+/* Button */
+.order-page .reserve-btn {
+  align-self: stretch;
+  padding: 12px 0;
+  background-color: #DC143C;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.order-page .reserve-btn:hover {
+  background-color: #b01030;
+}
+
+/* ===== Dark-Mode Overrides ===== */
+body.dark-mode .order-page .food-card {
+  background-color: #1f1f1f;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+
+body.dark-mode .order-page .food-name,
+body.dark-mode .order-page .food-price {
+  color: #fff !important;
+}
+
+body.dark-mode .order-page .restaurant-name,
+body.dark-mode .order-page .food-desc {
+  color: #ccc;
+}
+
+body.dark-mode .order-page .reserve-btn {
+  background-color: #DC143C;
+}
+
+body.dark-mode .order-page .reserve-btn:hover {
+  background-color: #b01030;
+}
+
+/* ===== Responsive Font Tweaks ===== */
+@media (max-width: 480px) {
+  .order-page .food-name { font-size: 1.2rem; }
+  .order-page .food-desc { font-size: 0.9rem; }
+  .order-page .food-price { font-size: 1rem; }
+  .order-page .reserve-btn { font-size: 0.95rem; padding: 10px 0; }
+}
+/* Scoped to the order page */
+.order-page .reserve-btn {
+  /* Increase size */
+  padding: 16px 0;           /* taller button */
+  font-size: 1.1rem;         /* larger text */
+  font-weight: 700;          /* bolder text */
+  border-radius: 10px;       /* slightly rounder corners */
+  width: 100%;               /* full width of its container */
+  max-width: 300px;          /* but cap width on larger screens */
+  align-self: center;        /* center in its flex container */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover / active feedback */
+.order-page .reserve-btn:hover {
+  background-color: #b01030;
+  transform: translateY(-2px);
+}
+
+/* On very small screens, keep it edge-to-edge */
+@media (max-width: 480px) {
+  .order-page .reserve-btn {
+    max-width: none;
+    padding: 18px 0;
+    font-size: 1.2rem;
+  }
+}
+
+
+
+
+
+  /* ===== Scoped Order Success Page Styles ===== */
+.order-success-page .success-box {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #e6ffee;
+    border-left: 6px solid #2ecc71;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .order-success-page .success-box h2 {
+    color: #27ae60;
+    margin-bottom: 1rem;
+  }
+  
+  .order-success-page .success-box h3 {
+    margin-top: 1.5rem;
+    color: #2c3e50;
+  }
+  
+  .order-success-page .success-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  
+  .order-success-page .success-box li {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+  }
+  
+  /* Dark-mode overrides for Order Success page */
+body.dark-mode .order-success-page .success-box {
+  background-color: #2c2c2c;            /* Dark background */
+  border-left-color: #27ae60;            /* Keep the green accent */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7); /* Deeper shadow */
+}
+
+body.dark-mode .order-success-page .success-box h2,
+body.dark-mode .order-success-page .success-box h3,
+body.dark-mode .order-success-page .success-box p,
+body.dark-mode .order-success-page .success-box li {
+  color: #f0f0f0;                        /* Bright text */
+}
+
+body.dark-mode .order-success-page .success-box ul li strong {
+  color: #27ae60;                        /* Accent for labels */
+}

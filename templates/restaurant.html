@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}{{ restaurant.name }} Menu{% endblock %}
+
+{% block content %}
+<div class="restaurant-container">
+  <h2 class="restaurant-name">{{ restaurant.name }}</h2>
+  <p class="restaurant-description">{{ restaurant.description }}</p>
+  <div class="food-items-container">
+    {% for item in restaurant.menu %}
+    <div class="food-item-card">
+      <div class="food-image">
+        <img src="{{ item.image }}" alt="{{ item.name }}">
+      </div>
+      <div class="food-details">
+        <h3 class="food-name">{{ item.name }}</h3>
+        <p class="food-desc">{{ item.description }}</p>
+        <p class="food-price">Price: ₹{{ item.price }}</p>
+        <p class="food-rating">
+          Rating: 
+          <span class="stars">
+            &#9733; &#9733; &#9733; &#9733; &#9734;
+          </span>
+        </p>
+        {% set reserve_url = url_for("reserve") %}
+        <button class="reserve-btn" onclick="location.href='{{ reserve_url }}'">
+            Reserve & Book
+        </button>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+

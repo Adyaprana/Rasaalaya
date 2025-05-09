@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Place Order{% endblock %}
+
+{% block content %}
+<h2>Place Your Order</h2>
+<form id="place-order-form" action="{{ url_for('order') }}" method="POST">
+    <label>Name:</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label>Food Item:</label><br>
+    <input type="text" name="food" value="{{ food }}" readonly><br><br>
+
+    <label>Restaurant:</label><br>
+    <input type="text" name="restaurant" value="{{ restaurant }}" readonly><br><br>
+
+    <label>Price: ₹</label><br>
+    <input type="text" name="price" value="{{ price }}" readonly>
+    
+    <label>Quantity:</label><br>
+    <input type="number" name="quantity" min="1" required><br><br>
+
+    <label>Delivery Address:</label><br>
+    <textarea name="address" required></textarea><br><br>
+
+    <button type="submit">Place Order</button>
+</form>
+{% endblock %}

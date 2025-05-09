@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Order Successful{% endblock %}
+
+{% block content %}
+<div class="order-success-page">
+    <div class="success-box">
+        <h2>✅ Your Order is Successful!</h2>
+        <p>Thank you, <strong>{{ name }}</strong>. We've received your order.</p>
+
+        <h3>🧾 Order Details:</h3>
+        <ul>
+            <li><strong>Food Item:</strong> {{ food }}</li>
+            <li><strong>Restaurant:</strong> {{ restaurant }}</li>
+            <li><strong>Quantity:</strong> {{ quantity }}</li>
+            <li><strong>Total Price:</strong> ₹{{ total_price }}</li>
+            <li><strong>Delivery Address:</strong> {{ address }}</li>
+        </ul>
+
+        <p>Your food will be delivered shortly. Enjoy your meal! 🍽️</p>
+    </div>
+</div>
+{% endblock %}

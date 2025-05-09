@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Rasaalaya{% endblock %}
+
+{% block content %}
+
+<!-- 🌟 Search Bar + Veg/Non-Veg Toggle -->
+<div class="search-container">
+    <form action="{{ url_for('index') }}" method="get">
+        <input type="text" name="q" placeholder="Search restaurants by name or cuisine..." value="{{ request.args.get('q', '') }}">
+        
+        <div class="food-type-toggle">
+            <label class="veg-option">
+                <input type="radio" name="food_type" value="veg" {% if request.args.get('food_type') == 'veg' %}checked{% endif %}>
+                <i class="fas fa-leaf"></i> Veg
+            </label>
+            <label class="nonveg-option">
+                <input type="radio" name="food_type" value="nonveg" {% if request.args.get('food_type') == 'nonveg' %}checked{% endif %}>
+                <i class="fas fa-drumstick-bite"></i> Non Veg
+            </label>
+        </div>
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<!-- 🍽️ Restaurant Cards (Moved to bottom) -->
+<div class="restaurant-list">
+    {% if restaurants|length == 0 %}
+        <p>No restaurants found.</p>
+    {% endif %}
+    {% for restaurant in restaurants %}
+    <div class="restaurant-card">
+        <div class="restaurant-image">
+            <img src="{{ restaurant.image }}" alt="{{ restaurant.name }}">
+        </div>
+        <div class="restaurant-info">
+            <h2 class="restaurant-name">{{ restaurant.name }}</h2>
+            <p class="cuisine">Cuisine: {{ restaurant.cuisine }}</p>
+            <p class="rating">
+                Rating:
+                <span class="stars">
+                    {% for i in range(restaurant.rating|int) %}&#9733;{% endfor %}
+                    {% if (restaurant.rating - (restaurant.rating|int)) >= 0.5 %}&#9733;{% endif %}
+                </span>
+                ({{ restaurant.rating }} / 5)
+            </p>
+            <form action="{{ url_for('restaurant_menu', restaurant_id=restaurant.id) }}" method="get">
+                <button type="submit" class="explore-btn">Explore Foods</button>
+            </form>
+            
+                                
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<script>
+    function filterMenu(type) {
+        fetch(`/menu/filter?type=${type}`)
+            .then(response => response.json())
+            .then(data => {
+                let menuHtml = "<h3>Filtered Dishes</h3><ul>";
+                data.forEach(dish => {
+                    menuHtml += `<li>${dish.name} - ₹${dish.price} <br> From: ${dish.restaurant}</li>`;
+                });
+                menuHtml += "</ul>";
+                document.getElementById("filtered-menu").innerHTML = menuHtml;
+            });
+    }
+</script>
+
+<!-- 🥗 Meal Filter Section (Now comes first) -->
+<!-- <section class="meal-selector">
+    <h2>Choose Your Meal Type</h2>
+    <div>
+        <button onclick="filterMenu('veg')">Veg</button>
+        <button onclick="filterMenu('nonveg')">Non-Veg</button>
+    </div>
+    <div id="filtered-menu"></div>
+</section> -->
+
+<!-- 🏠 Optional Restaurant List
+<section class="restaurant-links">
+    <h3>All Restaurants</h3>
+    <ul>
+        {% for restaurant in restaurants %}
+        <li>
+            <a href="{{ url_for('menu', restaurant_id=restaurant.id) }}">
+                {{ restaurant.name }} - {{ restaurant.cuisine }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</section> -->
+
+
+{% endblock %}

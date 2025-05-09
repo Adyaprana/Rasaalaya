@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Options - Rasaalaya{% endblock %}
+
+{% block content %}
+<div class="restaurant-container">
+    <div class="restaurant-card" style="width: 100%; max-width: 700px; margin: 0 auto;">
+
+        <div class="restaurant-info">
+            <h2 class="restaurant-name">⚙️ Restaurant System Settings</h2>
+            <p class="cuisine">Manage preferences for appearance, behavior, and notifications.</p>
+        </div>
+
+        {% if success %}
+        <div style="padding: 10px 20px; background: #e0ffe0; color: #2c662d; text-align: center; font-weight: bold; border-radius: 5px; margin: 0 15px 15px;">
+            ✅ Settings saved successfully for "{{ restaurant_name }}"
+        </div>
+        {% endif %}
+
+        <form action="{{ url_for('options') }}" method="post" style="padding: 20px;">
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label for="restaurant_name"><strong>Restaurant Name</strong></label><br>
+                <input type="text" id="restaurant_name" name="restaurant_name" placeholder="Enter name..." required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label for="theme"><strong>Theme Mode</strong></label><br>
+                <select id="theme" name="theme" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                    <option value="veg">Veg Theme</option>
+                </select>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label for="currency"><strong>Currency</strong></label><br>
+                <select id="currency" name="currency" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                    <option value="INR">₹ INR</option>
+                    <option value="USD">$ USD</option>
+                    <option value="EUR">€ EUR</option>
+                </select>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label><strong>Email Notifications</strong></label><br>
+                <input type="checkbox" id="notifications" name="notifications" checked>
+                <label for="notifications">Enable updates via email</label>
+            </div>
+
+            <div style="text-align: center;">
+                <button type="submit" class="reserve-btn">💾 Save Settings</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+
+

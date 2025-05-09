@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}View Post - Rasaalaya{% endblock %}
+
+{% block content %}
+<div class="restaurant-container post-container">
+  <h2>{{ post.title }}</h2>
+  <p><strong>Author:</strong> {{ post.author }}</p>
+  <p><strong>Date Posted:</strong> {{ post.date_posted }}</p>
+  <div class="post-body">
+    <p>{{ post.body }}</p>
+  </div>
+  <a href="{{ url_for('forum') }}" class="back-to-forum-btn">Back to Forum</a>
+</div>
+{% endblock %}
+

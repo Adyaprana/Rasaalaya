@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Rasaalaya{% endblock %}</title>
+    <link rel="icon" 
+      href="{{ url_for('static', filename='images/favicon.png') }}" 
+      type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Optionally include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body {% if veg_theme %}class="veg-theme"{% endif %}>
+
+<header>
+    <div class="container">
+        <h1>
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Rasaalaya Logo" class="logo">
+            Rasaalaya 🍽️
+            <div class="theme-toggle">
+  <label class="switch">
+    <input type="checkbox" id="theme-switch">
+    <span class="slider"></span>
+  </label>
+</div>
+
+        </h1>
+
+        <!-- Mobile Menu Toggle -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span>&#9776;</span>
+        </label>
+
+        <!-- Navigation Links -->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('foods') }}">Foods</a></li>
+                <li><a href="{{ url_for('options') }}">Options</a></li>
+                <li><a href="{{ url_for('forum') }}">Forum</a></li>
+                <li><a href="{{ url_for('reserve') }}">Reserve</a></li>
+                <li><a href="{{ url_for('order_menu') }}">Order Now</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<footer>
+    🍽️ Made with ❤️ by <strong>Adyaprana Pradhan</strong> | © 2025 Rasaalaya – Online Restaurant Management System<br>
+    Enabling seamless table booking & food ordering. All rights reserved 🔒
+</footer>
+<script>
+  const toggleSwitch = document.getElementById('theme-switch');
+  const currentTheme = localStorage.getItem('theme');
+
+  if (currentTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    toggleSwitch.checked = true;
+  }
+
+  toggleSwitch.addEventListener('change', function () {
+    if (this.checked) {
+      document.body.classList.add('dark-mode');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.body.classList.remove('dark-mode');
+      localStorage.setItem('theme', 'light');
+    }
+  });
+
+</script>
+
+</body>
+</html>
+
+

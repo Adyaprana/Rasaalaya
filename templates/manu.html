@@ -1,0 +1,22 @@
+{% for dish in restaurant.menu %}
+    <div class="menu-item">
+        <h3>{{ dish.name }}</h3>
+        <p>{{ dish.description }}</p>
+        <p>Price: ₹{{ dish.price }}</p>
+        <button onclick="addToCart('{{ restaurant.id }}', '{{ dish.name }}', '{{ dish.price }}')">Add to Cart</button>
+    </div>
+{% endfor %}
+
+<a href="{{ url_for('order_page') }}">
+    <button>Proceed to Order</button>
+</a>
+
+<script>
+    let cart = [];
+
+    function addToCart(restaurantId, itemName, price) {
+        cart.push({ restaurantId, itemName, price });
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(itemName + " added to cart!");
+    }
+</script>

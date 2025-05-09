@@ -1,15 +1,62 @@
-# Ignore Python virtual environments
-venv/
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
+*$py.class
 
-# Ignore system files
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environment
+venv/
+ENV/
+env/
+.venv/
+.env/
+
+# Flask instance folder
+instance/
+*.sqlite3
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# PyCharm / VSCode
+.idea/
+.vscode/
+
+# macOS / Windows / Linux clutter
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# Ignore IDE/workspace files
-.vscode/
-.idea/
-*.code-workspace

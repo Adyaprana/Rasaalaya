@@ -1,1 +1,15 @@
-venv/ 
+# Ignore Python virtual environments
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE/workspace files
+.vscode/
+.idea/
+*.code-workspace

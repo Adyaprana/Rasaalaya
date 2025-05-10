@@ -1,8 +1,12 @@
 from flask import Flask, render_template, request, jsonify
 import json
 import os
+from dotenv import load_dotenv
+
+load_dotenv()  # Load environment variables from .env
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
 # File to store restaurants data (if not exists, defaults will be used)
 DATA_FILE = "restaurants.json"

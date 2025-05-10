@@ -168,9 +168,9 @@ Distributed under the MIT License. See LICENSE for more information.
 ## 👤 Author
 **Adyaprana Pradhan**
 
-**GitHub : **[GitHub](https://github.com/Adyaprana)
+**GitHub :** [GitHub](https://github.com/Adyaprana)
 
 
-**LinkedIn : **[LinkedIn](https://www.linkedin.com/in/adyaprana21)
+**LinkedIn :**[LinkedIn](https://www.linkedin.com/in/adyaprana21)
 
 “Food brings people together on many different levels. It’s nourishment of the soul and body; it’s truly love.” – Giada De Laurentiis

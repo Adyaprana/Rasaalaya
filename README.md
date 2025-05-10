@@ -104,3 +104,73 @@ source venv/bin/activate
 
 # 3. Install dependencies
 pip install -r requirements.txt
+
+```
+
+## 📂 Project Structure
+
+<details open>
+  <summary>📂 Project Structure</summary>
+
+  - **Rasaalaya/**
+    - `app.py` – Main Flask application
+    - `requirements.txt` – Python dependencies
+    - `LICENSE`
+    - `.gitignore`
+    - **static/**
+      - **css/**
+        - `style.css` – Core styles (light/dark, responsive)
+        - ...
+      - **images/** – All dish & logo images
+      - **js/**
+        - `main.js` – Theme toggle script
+    - **templates/**
+      - `base.html` – Main layout with header/footer
+      - `index.html` – Home / restaurant listing
+      - `restaurant.html` – Individual restaurant menu
+      - `order_menu.html` – Consolidated “Order Now” page
+      - `order.html` – Order form
+      - `order_success.html` – Order confirmation
+      - `reserve.html` – Table reservation form
+      - `forum.html` – Community forum list
+      - `view_post.html` – Single forum post view
+      - ...
+</details>
+
+
+
+## 📸 Screenshots
+
+| Home (Light)                       | Home (Dark)                        |
+|------------------------------------|------------------------------------|
+| <img src="static/images/screenshot1.png" width="300"/> | <img src="static/images/screenshot2.png" width="300"/> |
+
+| Restaurant Page                    | Order Now Menu                     |
+|------------------------------------|------------------------------------|
+| <img src="static/images/screenshot3.png" width="300"/> | <img src="static/images/screenshot4.png" width="300"/> |
+
+## ⚙️ Configuration & Customization
+
+- **Database**: By default, uses SQLite. To switch databases, update the URI in `app.py`.  
+- **Environment Variables**: Create a `.env` file (if needed) to store secrets and configuration.  
+- **Theme**: Customize light/dark colors in `static/css/style.css`—look for the `:root` and `.dark-mode` sections.  
+- **Adding Restaurants**: Edit the `default_restaurants` list in `app.py` or connect to a real database.
+
+## 🤝 Contributing
+1. **Fork the repository**  
+2. **Create a branch**:  
+   ```bash
+   git checkout -b feature/YourFeatureName
+ 
+## 📄 License
+Distributed under the MIT License. See LICENSE for more information.
+
+## 👤 Author
+**Adyaprana Pradhan**
+
+**GitHub :** [GitHub](https://github.com/Adyaprana)
+
+
+**LinkedIn :**[LinkedIn](https://www.linkedin.com/in/adyaprana21)
+
+“Food brings people together on many different levels. It’s nourishment of the soul and body; it’s truly love.” – Giada De Laurentiis

@@ -60,3 +60,7 @@ coverage.xml
 Thumbs.db
 desktop.ini
 
+venv/
+__pycache__/
+*.pyc
+.env

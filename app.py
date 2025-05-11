@@ -256,14 +256,14 @@ default_restaurants = [
                 "name": "Thukpa",
                 "description": "Tibetan noodle soup with vegetables and a flavorful broth.",
                 "price": 200,
-                "image": "/static/images/thukpa.png",
+                "image": "/static/images/Thukpa.png",
                 "veg": True
             },
             {
                 "name": "Fish Tenga",
                 "description": "A quintessential Assamese fish dish, perfect for summer and winter meals.",
                 "price": 250,
-                "image": "/static/images/fish_tenga.jpg",
+                "image": "/static/images/Fish_Tenga.jpg",
                 "veg": False
             },
             {

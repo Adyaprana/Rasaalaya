@@ -350,7 +350,7 @@ default_restaurants = [
                 "name": "Sandesh",
                 "description": "A delicate Bengali sweet made from fresh paneer and subtly flavored with cardamom.",
                 "price": 130,
-                "image": "/static/images/sandesh.jpg",
+                "image": "/static/images/sandesh.JPG",
                 "veg": True     
             },
             {

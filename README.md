@@ -76,7 +76,7 @@ Rasaalaya is a full-featured, responsive web application built with Flask, desig
 ## 🎬 Demo
 
 <!-- If you have a live URL, link it here -->
-[🔗 Live Demo](#) • [▶️ Demo Video](#)
+[🔗 Live Demo](https://rasaalaya.onrender.com/) • [▶️ Demo Video](#)
 
 ---
 

@@ -54,7 +54,7 @@ default_restaurants = [
                 "name": "Bisi Bele Bath",
                 "description": "A spicy and flavorful rice dish made with lentils, rice, mixed vegetables, and aromatic spices.",
                 "price": 200,
-                "image": "/static/images/bisi_bele_bath.jpg",
+                "image": "/static/images/bisi_bele_bath.JPG",
                 "veg": True
             },
             {

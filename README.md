@@ -157,6 +157,7 @@ pip install -r requirements.txt
 - **Adding Restaurants**: Edit the `default_restaurants` list in `app.py` or connect to a real database.
 
 ## 🤝 Contributing
+
 1. **Fork the repository**  
 2. **Create a branch**:  
    ```bash

@@ -7,98 +7,105 @@
 <p align="center">
   <img src="static/images/logo.png" alt="Rasaalaya Logo" width="100"/>
   <h1 align="center">Rasaalaya</h1>
-  <p align="center">🍽️ Your go-to Flask-powered restaurant listing & ordering platform</p>
+  <p align="center">🍽️ <strong>Your go-to Flask-powered restaurant listing & ordering platform</strong></p>
 </p>
 
 ---
 
 ## 🏷️ Badges
 
-[![Python](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/)  
-[![Flask](https://img.shields.io/badge/flask-2.1.1-lightgrey.svg)](https://flask.palletsprojects.com/)  
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)  
+[![Python](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/flask-2.1.1-lightgrey.svg)](https://flask.palletsprojects.com/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Repo Size](https://img.shields.io/github/repo-size/Adyaprana/Rasaalaya)](https://github.com/Adyaprana/Rasaalaya)
 
 ---
 
-## 📖 Table of Contents
+## 📚 Table of Contents
 
-- [About](#about)  
-- [Features](#features)  
-- [Tech Stack](#tech-stack)  
-- [Demo](#demo)  
-- [Getting Started](#getting-started)  
-  - [Prerequisites](#prerequisites)  
-  - [Installation](#installation)  
-  - [Running Locally](#running-locally)  
-- [Project Structure](#project-structure)  
-- [Screenshots](#screenshots)  
-- [Configuration & Customization](#configuration--customization)  
-- [Contributing](#contributing)  
-- [License](#license)  
-- [Author](#author)  
-
----
-
-## 🧐 About
-
-Rasaalaya is a full-featured, responsive web application built with Flask, designed to help users browse restaurants by cuisine, view detailed menus with images, place food orders, and reserve tables. It combines elegant UI/UX (including light/dark modes), dynamic Jinja2 templates, and an intuitive ordering workflow—all in a single codebase.
+- 📖 [**About**](#about)
+- 🌟 [**Features**](#features)
+- ⚙️ [**Tech Stack**](#tech-stack)
+- 🎬 [**Demo**](#demo)
+- 🚀 [**Getting Started**](#getting-started)
+  - ✅ [**Prerequisites**](#prerequisites)
+  - 📦 [**Installation**](#installation)
+  - 💻 [**Running Locally**](#running-locally)
+- 🧱 [**Project Structure**](#project-structure)
+- 📸 [**Screenshots**](#screenshots)
+- ⚙️ [**Configuration & Customization**](#configuration--customization)
+- 🤝 [**Contributing**](#contributing)
+- 📄 [**License**](#license)
+- 👤 [**Author**](#author)
 
 ---
 
-## ✨ Features
+## 📖 About
 
-- **Restaurant Listings**: Browse by cuisine category or view all restaurants.  
-- **Dynamic Menus**: Each restaurant page displays menu items with images, descriptions, prices, and ratings.  
-- **Order Workflow**:  
-  1. Select food items from a consolidated “Order Now” menu.  
-  2. Fill in name, quantity, and address.  
-  3. View a summary on a success page.  
-- **Table Reservations**: Reserve tables via a simple form with date/time picker.  
-- **Community Forum**: Post, read, and comment on food discussions.  
-- **Responsive Design**: Mobile-first grid and flex layouts, premium hover/transition effects.  
-- **Theme Toggle**: Light and dark modes with preference saved in `localStorage`.  
-- **Secure & Clean Code**: Follows Flask best practices, uses `.gitignore` to exclude sensitive or bulky files.
+**Rasaalaya** is a full-featured, responsive **web application** built using **Flask**, designed to let users:
 
----
+- 🍛 Browse restaurants by **cuisine**
+- 📜 View detailed **menus** with images
+- 🛒 Place **food orders**
+- 📅 **Reserve tables**
 
-## 🛠️ Tech Stack
+This project includes:
 
-- **Backend**: Python 3.12, Flask 2.1.1  
-- **Frontend**: HTML5, CSS3 (with modern Flexbox & Grid), JavaScript  
-- **Templating**: Jinja2  
-- **Data Storage**: SQLite (configurable to other DBs)  
-- **Version Control**: Git & GitHub  
-- **Dev Tools**: VSCode / PyCharm, Prettier (for CSS/JS formatting)
+- 🎨 Elegant **UI/UX** (Light & Dark Modes)
+- ⚡ Dynamic **Jinja2** templates
+- 🔁 Seamless and intuitive **ordering workflow**
 
 ---
 
-<h2>🎬 Demo</h2>
+## 🌟 Features
+
+- 🏪 **Restaurant Listings**
+- 📸 **Menu with Images**
+- 🧾 **Order Placement & Confirmation**
+- 📆 **Table Reservations**
+- 🌓 **Light/Dark Mode Toggle**
+- 💬 **Community Forum**
+
+---
+
+## ⚙️ Tech Stack
+
+- 🐍 **Backend**: `Python 3.12`, `Flask 2.1.1`
+- 🖥️ **Frontend**: `HTML5`, `CSS3`, `JavaScript`
+- 📄 **Templating**: `Jinja2`
+- 💾 **Database**: `SQLite` (easily configurable)
+- 🔧 **Dev Tools**: `VSCode`, `PyCharm`, `Prettier`
+- 📁 **Version Control**: `Git & GitHub`
+
+---
+
+## 🎬 Demo
 
 <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; gap: 2rem; padding: 1rem 0;">
 
-  <a href="https://rasaalaya.onrender.com/" target="_blank" style="text-decoration: none;">
-    <img src="https://img.shields.io/badge/%F0%9F%94%97%20Live%20Demo-blue?style=for-the-badge" alt="Live Demo">
-  </a>
+<a href="https://rasaalaya.onrender.com/" target="_blank" style="text-decoration: none;">
+  <img src="https://img.shields.io/badge/%F0%9F%94%97%20Live%20Demo-blue?style=for-the-badge" alt="Live Demo">
+</a>
 
-  <a href="https://www.linkedin.com/feed/update/urn:li:activity:7327239063055273984/?originTrackingId=1b1gbSyGSEObcZHjop9UzQ%3D%3D" target="_blank" style="text-decoration: none;">
-    <img src="https://img.shields.io/badge/%E2%96%B6%EF%B8%8F%20Demo%20Video-ff0000?logo=youtube&logoColor=white&style=for-the-badge" alt="Demo Video">
-  </a>
+<a href="https://www.linkedin.com/feed/update/urn:li:activity:7327239063055273984/?originTrackingId=1b1gbSyGSEObcZHjop9UzQ%3D%3D" target="_blank" style="text-decoration: none;">
+  <img src="https://img.shields.io/badge/%E2%96%B6%EF%B8%8F%20Demo%20Video-ff0000?logo=youtube&logoColor=white&style=for-the-badge" alt="Demo Video">
+</a>
 
 </div>
-
 
 ---
 
 ## 🚀 Getting Started
 
-### Prerequisites
+### ✅ Prerequisites
 
-- Python 3.7+  
-- Git  
-- (Optional) Virtual environment tool (venv, pipenv, etc.)
+- 🐍 **Python 3.7+**
+- 🔗 **Git**
+- 📦 *(Optional)*: Virtual environment tool like `venv`, `pipenv`
 
-### Installation
+---
+
+### 📦 Installation
 
 ```bash
 # 1. Clone the repo
@@ -107,81 +114,82 @@ cd Rasaalaya
 
 # 2. Create a virtual environment
 python -m venv venv
-# Windows
+# For Windows
 venv\Scripts\activate
-# macOS/Linux
+# For macOS/Linux
 source venv/bin/activate
 
 # 3. Install dependencies
 pip install -r requirements.txt
 
 ```
+## 🧱 Project Structure
+<details open> <summary>📁 <strong>Folder Overview</strong></summary>
+📦 Rasaalaya/
+├── 📄 **app.py** – Main Flask application entry point  
+├── 📄 **requirements.txt** – Python dependencies  
+├── 📄 **LICENSE** – MIT License info  
+├── 📄 **.gitignore** – Files and folders to ignore in Git  
+├── 📁 **static/** – All static frontend files  
+│   ├── 📁 **css/**  
+│   │   └── 🎨 **style.css** – Core styles (themes, responsiveness)  
+│   ├── 📁 **images/** – Dish & logo images  
+│   └── 📁 **js/**  
+│       └── 💡 **main.js** – Theme toggle script  
+├── 📁 **templates/** – HTML templates with Jinja2  
+│   ├── 🧩 **base.html** – Layout with header, footer, theme toggle  
+│   ├── 🏠 **index.html** – Home page & restaurant listings  
+│   ├── 🍛 **restaurant.html** – Individual restaurant menus  
+│   ├── 🛒 **order_menu.html** – Order menu display  
+│   ├── ✅ **order_success.html** – Confirmation page  
+│   ├── 📦 **order.html** – Order form  
+│   ├── 📅 **reserve.html** – Table reservation form  
+│   ├── 💬 **forum.html** – Community forum listing  
+│   └── 📝 **view_post.html** – Single forum post view  
 
-## 📂 Project Structure
-
-<details open>
-  <summary>📂 Project Structure</summary>
-
-  - **Rasaalaya/**
-    - `app.py` – Main Flask application
-    - `requirements.txt` – Python dependencies
-    - `LICENSE`
-    - `.gitignore`
-    - **static/**
-      - **css/**
-        - `style.css` – Core styles (light/dark, responsive)
-        - ...
-      - **images/** – All dish & logo images
-      - **js/**
-        - `main.js` – Theme toggle script
-    - **templates/**
-      - `base.html` – Main layout with header/footer
-      - `index.html` – Home / restaurant listing
-      - `restaurant.html` – Individual restaurant menu
-      - `order_menu.html` – Consolidated “Order Now” page
-      - `order.html` – Order form
-      - `order_success.html` – Order confirmation
-      - `reserve.html` – Table reservation form
-      - `forum.html` – Community forum list
-      - `view_post.html` – Single forum post view
-      - ...
 </details>
-
 
 
 ## 📸 Screenshots
 
-| Home (Light)                       | Home (Dark)                        |
-|------------------------------------|------------------------------------|
+| 🌞 Home (Light Mode)                                   | 🌚 Home (Dark Mode)                                   |
+| ------------------------------------------------------ | ------------------------------------------------------ |
 | <img src="static/images/screenshot1.png" width="300"/> | <img src="static/images/screenshot2.png" width="300"/> |
-
-| Restaurant Page                    | Order Now Menu                     |
-|------------------------------------|------------------------------------|
+<br>
+| 🍴 Restaurant Page                                     | 🛍️ Order Menu Page                                    |
+| ------------------------------------------------------ | ------------------------------------------------------ |
 | <img src="static/images/screenshot3.png" width="300"/> | <img src="static/images/screenshot4.png" width="300"/> |
+
 
 ## ⚙️ Configuration & Customization
 
-- **Database**: By default, uses SQLite. To switch databases, update the URI in `app.py`.  
-- **Environment Variables**: Create a `.env` file (if needed) to store secrets and configuration.  
-- **Theme**: Customize light/dark colors in `static/css/style.css`—look for the `:root` and `.dark-mode` sections.  
-- **Adding Restaurants**: Edit the `default_restaurants` list in `app.py` or connect to a real database.
+- 🗄️ **Database:** By default, uses SQLite. To switch databases, update the URI in `app.py`.  
+- 🛡️ **Environment Variables:** Create a `.env` file (if needed) to store secrets and configuration.  
+- 🎨 **Theme:** Customize light/dark colors in `static/css/style.css`—look for the `:root` and `.dark-mode` sections.  
+- 🍽️ **Adding Restaurants:** Edit the `default_restaurants` list in `app.py` or connect to a real database.
+
+---
 
 ## 🤝 Contributing
 
 1. **Fork the repository**  
-2. **Create a branch**:  
+2. **Create a branch:**  
    ```bash
    git checkout -b feature/YourFeatureName
- 
+
+---
+
 ## 📄 License
-Distributed under the MIT License. See LICENSE for more information.
+
+Distributed under the **MIT License**. See [LICENSE](LICENSE) for more information.
+
+---
 
 ## 👤 Author
+
 **Adyaprana Pradhan**
 
-**GitHub :** [GitHub](https://github.com/Adyaprana)
+**GitHub:** [https://github.com/Adyaprana](https://github.com/Adyaprana)  
+**LinkedIn:** [https://www.linkedin.com/in/adyaprana21](https://www.linkedin.com/in/adyaprana21)
 
-
-**LinkedIn :**[LinkedIn](https://www.linkedin.com/in/adyaprana21)
-
-“Food brings people together on many different levels. It’s nourishment of the soul and body; it’s truly love.” – Giada De Laurentiis
+> “Food brings people together on many different levels. It’s nourishment of the soul and body; it’s truly love.” – *Giada De Laurentiis*

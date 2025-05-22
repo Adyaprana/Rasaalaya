@@ -124,30 +124,33 @@ pip install -r requirements.txt
 
 ```
 ## 🧱 Project Structure
-<details open> <summary>📁 <strong>Folder Overview</strong></summary>
-📦 Rasaalaya/
-├── 📄 **app.py** – Main Flask application entry point  
-├── 📄 **requirements.txt** – Python dependencies  
-├── 📄 **LICENSE** – MIT License info  
-├── 📄 **.gitignore** – Files and folders to ignore in Git  
-├── 📁 **static/** – All static frontend files  
-│   ├── 📁 **css/**  
-│   │   └── 🎨 **style.css** – Core styles (themes, responsiveness)  
-│   ├── 📁 **images/** – Dish & logo images  
-│   └── 📁 **js/**  
-│       └── 💡 **main.js** – Theme toggle script  
-├── 📁 **templates/** – HTML templates with Jinja2  
-│   ├── 🧩 **base.html** – Layout with header, footer, theme toggle  
-│   ├── 🏠 **index.html** – Home page & restaurant listings  
-│   ├── 🍛 **restaurant.html** – Individual restaurant menus  
-│   ├── 🛒 **order_menu.html** – Order menu display  
-│   ├── ✅ **order_success.html** – Confirmation page  
-│   ├── 📦 **order.html** – Order form  
-│   ├── 📅 **reserve.html** – Table reservation form  
-│   ├── 💬 **forum.html** – Community forum listing  
-│   └── 📝 **view_post.html** – Single forum post view  
+
+<details open> 
+  <summary>📁 <strong>Folder Overview</strong></summary>
+
+- 📄 **app.py** – Main Flask application entry point  
+- 📄 **requirements.txt** – Python dependencies  
+- 📄 **LICENSE** – MIT License info  
+- 📄 **.gitignore** – Files and folders to ignore in Git  
+- 📁 **static/** – All static frontend files  
+  - 📁 **css/**  
+    - 🎨 **style.css** – Core styles (themes, responsiveness)  
+  - 📁 **images/** – Dish & logo images  
+  - 📁 **js/**  
+    - 💡 **main.js** – Theme toggle script  
+- 📁 **templates/** – HTML templates with Jinja2  
+  - 🧩 **base.html** – Layout with header, footer, theme toggle  
+  - 🏠 **index.html** – Home page & restaurant listings  
+  - 🍛 **restaurant.html** – Individual restaurant menus  
+  - 🛒 **order_menu.html** – Order menu display  
+  - ✅ **order_success.html** – Confirmation page  
+  - 📦 **order.html** – Order form  
+  - 📅 **reserve.html** – Table reservation form  
+  - 💬 **forum.html** – Community forum listing  
+  - 📝 **view_post.html** – Single forum post view  
 
 </details>
+
 
 
 ## 📸 Screenshots

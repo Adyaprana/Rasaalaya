@@ -73,10 +73,20 @@ Rasaalaya is a full-featured, responsive web application built with Flask, desig
 
 ---
 
-## 🎬 Demo
+<h2>🎬 Demo</h2>
 
-<!-- If you have a live URL, link it here -->
-[🔗 Live Demo](https://rasaalaya.onrender.com/) • [▶️ Demo Video](https://www.linkedin.com/feed/update/urn:li:activity:7327239063055273984/?originTrackingId=1b1gbSyGSEObcZHjop9UzQ%3D%3D)
+<div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; gap: 2rem; padding: 1rem 0;">
+
+  <a href="https://rasaalaya.onrender.com/" target="_blank" style="text-decoration: none;">
+    <img src="https://img.shields.io/badge/%F0%9F%94%97%20Live%20Demo-blue?style=for-the-badge" alt="Live Demo">
+  </a>
+
+  <a href="https://www.linkedin.com/feed/update/urn:li:activity:7327239063055273984/?originTrackingId=1b1gbSyGSEObcZHjop9UzQ%3D%3D" target="_blank" style="text-decoration: none;">
+    <img src="https://img.shields.io/badge/%E2%96%B6%EF%B8%8F%20Demo%20Video-ff0000?logo=youtube&logoColor=white&style=for-the-badge" alt="Demo Video">
+  </a>
+
+</div>
+
 
 ---
 

@@ -158,6 +158,7 @@ pip install -r requirements.txt
 | 🌞 Home (Light Mode)                                   | 🌚 Home (Dark Mode)                                   |
 | ------------------------------------------------------ | ------------------------------------------------------ |
 | <img src="static/images/screenshot1.png" width="300"/> | <img src="static/images/screenshot2.png" width="300"/> |
+
 | 🍴 Restaurant Page                                     | 🛍️ Order Menu Page                                    |
 | ------------------------------------------------------ | ------------------------------------------------------ |
 | <img src="static/images/screenshot3.png" width="300"/> | <img src="static/images/screenshot4.png" width="300"/> |

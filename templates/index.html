@@ -4,7 +4,6 @@
 
 {% block content %}
 
-<!-- 🌟 Search Bar + Veg/Non-Veg Toggle -->
 <div class="search-container">
     <form action="{{ url_for('index') }}" method="get">
         <input type="text" name="q" placeholder="Search restaurants by name or cuisine..." value="{{ request.args.get('q', '') }}">
@@ -23,7 +22,6 @@
     </form>
 </div>
 
-<!-- 🍽️ Restaurant Cards (Moved to bottom) -->
 <div class="restaurant-list">
     {% if restaurants|length == 0 %}
         <p>No restaurants found.</p>

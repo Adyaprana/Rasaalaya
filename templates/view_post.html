@@ -1,8 +1,7 @@
 {% extends "base.html" %}
-
 {% block title %}View Post - Rasaalaya{% endblock %}
-
 {% block content %}
+
 <div class="restaurant-container post-container">
   <h2>{{ post.title }}</h2>
   <p><strong>Author:</strong> {{ post.author }}</p>
@@ -12,5 +11,6 @@
   </div>
   <a href="{{ url_for('forum') }}" class="back-to-forum-btn">Back to Forum</a>
 </div>
+
 {% endblock %}
 

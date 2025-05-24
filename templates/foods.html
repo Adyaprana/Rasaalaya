@@ -6,7 +6,6 @@
 <div class="search-container">
     <form action="{{ url_for('index') }}" method="get">
         <input type="text" name="q" placeholder="Search foods by name..." value="{{ query }}">
-        <!-- Keep the toggle visible so users can change their selection -->
         <div class="food-type-toggle">
             <label class="veg-option">
                 <input type="radio" name="food_type" value="veg" {% if request.args.get('food_type') == 'veg' %}checked{% endif %}>

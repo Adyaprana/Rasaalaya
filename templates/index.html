@@ -11,7 +11,7 @@
                 <input type="radio" name="food_type" value="veg" {% if request.args.get('food_type') == 'veg' %}checked{% endif %}>
                 <i class="fas fa-leaf"></i> Veg
             </label>
-            
+        
             <label class="nonveg-option">
                 <input type="radio" name="food_type" value="nonveg" {% if request.args.get('food_type') == 'nonveg' %}checked{% endif %}>
                 <i class="fas fa-drumstick-bite"></i> Non Veg

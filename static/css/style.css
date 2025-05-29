@@ -1478,7 +1478,3 @@ body.dark-mode .order-success-page .success-box p,
 body.dark-mode .order-success-page .success-box li {
   color: #f0f0f0;                        /* Bright text */
 }
-
-body.dark-mode .order-success-page .success-box ul li strong {
-  color: #27ae60;                        /* Accent for labels */
-}

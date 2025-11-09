@@ -1,0 +1,111 @@
+client:
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="ISO-8859-1">
+
+<title>Insert title here</title>
+
+</head>
+
+<body>
+
+<form action="http://localhost:8282/test19/Lab3ProServlet" method="POST">
+
+Name: <input type="text" name="uname"><br/><br/>
+
+Subject 1: <input type="number" name="sub1"><br/><br/>
+
+Subject 2: <input type="number" name="sub2"><br/><br/>
+
+Subject 3: <input type="number" name="sub3"><br/><br/>
+
+Subject 4: <input type="number" name="sub4"><br/><br/>
+
+Subject 5: <input type="number" name="sub5"><br/><br/><br/>
+
+Practical 1: <input type="number" name="pra1"><br/><br/>
+
+Practical 2: <input type="number" name="pra2"><br/><br/>
+
+<input type="submit" name="submit">
+
+<input type="reset" name="reset">
+
+</form>
+
+</body>
+
+</html>
+
+
+
+servlet:
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+@WebServlet("/Lab3ProServlet")
+public class Lab3ProServlet extends HttpServlet {
+private static final long serialVersionUID = 1L;
+ public Lab3ProServlet() {
+ super();
+ // TODO Auto-generated constructor stub
+ }
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws
+ServletException, IOException {
+// TODO Auto-generated method stub
+PrintWriter out = response.getWriter();
+try{
+int number1=Integer.parseInt(request.getParameter("sub1"));
+int number2=Integer.parseInt(request.getParameter("sub2"));
+int number3=Integer.parseInt(request.getParameter("sub3"));
+int number4=Integer.parseInt(request.getParameter("sub4"));
+int number5=Integer.parseInt(request.getParameter("sub5"));
+int number6=Integer.parseInt(request.getParameter("pra1"));
+int number7=Integer.parseInt(request.getParameter("pra2"));
+int Result=number1+number2+number3+number4+number5+number6+number7;
+float percent=(Result/7);
+out.println("<table border=1>");
+out.println("<tr>");
+String nme = request.getParameter("uname");
+out.println("<td colspan='7'>");
+out.println("\nName: "+nme);out.println("</td>");
+out.println("</tr>");
+out.println("<tr>");
+out.println("<td>");
+out.println("\nSubject 1 Marks: "+number1); out.println("</td>");
+out.println("<td>");
+out.println("\nSubject 2 Marks: "+number2); out.println("</td>");
+out.println("<td>");
+out.println("\nSubject 3 Marks: "+number3); out.println("</td>");
+out.println("<td>");
+out.println("\nSubject 4 Marks: "+number4); out.println("</td>");
+out.println("<td>");
+out.println("\nSubject 5 Marks: "+number5); out.println("</td>");
+out.println("<td>");
+out.println("\nPractical 1 Marks: "+number6); out.println("</td>");
+out.println("<td>");
+out.println("\nPractical 2 Marks: "+number7); out.println("</td>");
+out.println("</tr>");
+out.println("<tr>");
+out.println("<td colspan='7'>");
+out.println("\nSum of marks : &nbsp;"+Result); out.println("</td>");
+out.println("</tr>");
+out.println("<tr>");
+out.println("<td colspan='7'>");
+out.println("\nPersentage: "+percent); out.println("</td>");
+out.println("</tr>");
+out.println("</table>");
+}
+catch(Exception e){
+out.println("Number Format Exception");
+}
+}
+}

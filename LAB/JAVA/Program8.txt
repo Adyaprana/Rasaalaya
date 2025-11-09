@@ -1,0 +1,51 @@
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+@WebServlet("/Lab2ProServlet")
+public class Lab2ProServlet extends HttpServlet {
+ private static final long serialVersionUID = 1L;
+    public Lab2ProServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+ protected void doPost(HttpServletRequest request, HttpServletResponse response) throws
+ServletException, IOException {
+  // TODO Auto-generated method stub
+   
+  PrintWriter out = response.getWriter();
+  String username=request.getParameter("txt");
+  String password=request.getParameter("pass");
+  if((username.equals("mca"))& (password.equals("mca")))
+  {
+   out.println("Welcome to the Computer Science [PG] Department");
+   response.setStatus(HttpServletResponse.SC_OK);
+   out.println("<br>");
+   out.println("Status Code 200");
+  }
+  else
+  {
+   out.println("Client request incomplete Status Code 404");
+   response.sendError(HttpServletResponse.SC_NOT_FOUND,"page not found");
+  }
+ }
+}
+
+client side:
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+</head>
+<body>
+<form action="http://localhost:8282/Lab2ProServlet/Lab2ProServlet" method="post">
+Username: <input type="text" name="txt"><br>
+Password: <input type="password" name="pass"><br>
+<input type="submit" name="submit"><br>
+<input type="reset" name="reset">
+</form>
+</body>
+</html> 

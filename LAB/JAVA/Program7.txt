@@ -1,0 +1,86 @@
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/form-data")
+public class FormDataServlet extends HttpServlet {
+
+    // Handle GET requests
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+       
+        // Get form data if submitted via GET
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+
+            out.println("<!DOCTYPE html>");
+            out.println("<html><head><title>Form Data Using GET and POST</title></head><body>");
+            out.println("<h2>Form Submission using GET or POST</h2>");
+
+            // Display data if available
+            if (name != null || email != null) {
+                out.println("<h3>Received Data:</h3>");
+                out.println("<p>Name: " + name + "</p>");
+                out.println("<p>Email: " + email + "</p>");
+            }
+
+            // Display the form
+            out.println("<hr>");
+            out.println("<form method='GET' action='form-data'>");
+            out.println("<h4>Submit using GET</h4>");
+            out.println("Name: <input type='text' name='name'><br>");
+            out.println("Email: <input type='text' name='email'><br>");
+            out.println("<input type='submit' value='Submit with GET'>");
+            out.println("</form>");
+
+            out.println("<hr>");
+            out.println("<form method='POST' action='form-data'>");
+            out.println("<h4>Submit using POST</h4>");
+            out.println("Name: <input type='text' name='name'><br>");
+            out.println("Email: <input type='text' name='email'><br>");
+            out.println("<input type='submit' value='Submit with POST'>");
+            out.println("</form>");
+
+            out.println("</body></html>");
+        }
+    }
+
+    // Handle POST requests
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        // Get form data submitted via POST
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+
+            out.println("<!DOCTYPE html>");
+            out.println("<html><head><title>Form Data Using POST</title></head><body>");
+            out.println("<h2>Form Submission using POST</h2>");
+
+            // Display submitted data
+            out.println("<h3>Received Data:</h3>");
+            out.println("<p>Name: " + name + "</p>");
+            out.println("<p>Email: " + email + "</p>");
+
+            // Add a link to go back to the form
+            out.println("<hr>");
+            out.println("<a href='form-data'>Go back to the form</a>");
+
+            out.println("</body></html>");
+        }
+    }
+}
+
+
